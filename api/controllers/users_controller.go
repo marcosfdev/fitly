@@ -498,12 +498,12 @@ func (server *Server) DeleteUser(c *gin.Context) {
 		return
 	}
 
-	// Also delete the posts, likes and the comments that this user created if any:
+	// Also delete the workouts, likes and the comments that this user created if any:
 	comment := models.Comment{}
 	like := models.Like{}
-	post := models.Post{}
+	workout := models.Workout{}
 
-	_, err = post.DeleteUserPosts(server.DB, uint32(uid))
+	_, err = workout.DeleteUserWorkouts(server.DB, uint32(uid))
 	if err != nil {
 		errList["Other_error"] = "Please try again later"
 		c.JSON(http.StatusInternalServerError, gin.H{
