@@ -85,7 +85,7 @@ func (server *Server) GetLikes(c *gin.Context) {
 
 	workoutID := c.Param("id")
 
-	// Is a valid workout id given to us?
+	// Is a valid workoutt id given to us?
 	pid, err := strconv.ParseUint(workoutID, 10, 64)
 	if err != nil {
 		fmt.Println("this is the error: ", err)
@@ -97,7 +97,7 @@ func (server *Server) GetLikes(c *gin.Context) {
 		return
 	}
 
-	// Check if the workout exist:
+	// Check if the workoutt exist:
 	workout := models.Workout{}
 	err = server.DB.Debug().Model(models.Workout{}).Where("id = ?", pid).Take(&workout).Error
 	if err != nil {

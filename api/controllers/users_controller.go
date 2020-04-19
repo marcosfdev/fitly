@@ -22,6 +22,7 @@ import (
 	"github.com/marcosfdev/fitly/api/auth"
 	"github.com/marcosfdev/fitly/api/models"
 	"github.com/marcosfdev/fitly/api/security"
+
 	"github.com/marcosfdev/fitly/api/utils/formaterror"
 )
 
