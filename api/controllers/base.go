@@ -11,7 +11,7 @@ import (
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"    //mysql database driver
 	_ "github.com/jinzhu/gorm/dialects/postgres" //postgres database driver
-	"github.com/victorsteven/forum/api/models"
+	"github.com/marcosfdev/fitly/api/models"
 )
 
 type Server struct {
@@ -51,7 +51,7 @@ func (server *Server) Initialize(Dbdriver, DbUser, DbPassword, DbPort, DbHost, D
 	//database migration
 	server.DB.Debug().AutoMigrate(
 		&models.User{},
-		&models.Post{},
+		&models.Workout{},
 		&models.ResetPassword{},
 		&models.Like{},
 		&models.Comment{},

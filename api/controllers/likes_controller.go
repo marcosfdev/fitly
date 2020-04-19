@@ -7,8 +7,8 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/marcosfdev/fitly/api/auth"
+	"github.com/marcosfdev/fitly/api/models"
 	"github.com/marcosfdev/fitly/api/utils/formaterror"
-	"github.com/vmarcosfdev/fitly/api/models"
 )
 
 func (server *Server) LikeWorkout(c *gin.Context) {
@@ -16,7 +16,7 @@ func (server *Server) LikeWorkout(c *gin.Context) {
 	//clear previous error if any
 	errList = map[string]string{}
 
-	postID := c.Param("id")
+	workoutID := c.Param("id")
 	pid, err := strconv.ParseUint(workoutID, 10, 64)
 	if err != nil {
 		errList["Invalid_request"] = "Invalid Request"
@@ -126,7 +126,7 @@ func (server *Server) GetLikes(c *gin.Context) {
 	})
 }
 
-func (server *Server) UnLikePost(c *gin.Context) {
+func (server *Server) UnLikeWorkout(c *gin.Context) {
 
 	likeID := c.Param("id")
 	// Is a valid like id given to us?

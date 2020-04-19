@@ -25,16 +25,16 @@ func (s *Server) initializeRoutes() {
 
 		//Workouts routes
 		v1.POST("/workouts", middlewares.TokenAuthMiddleware(), s.CreateWorkout)
-		v1.GET("/workouts", s.GetPosts)
-		v1.GET("/workouts/:id", s.GetPost)
+		v1.GET("/workouts", s.GetWorkouts)
+		v1.GET("/workouts/:id", s.GetWorkout)
 		v1.PUT("/workouts/:id", middlewares.TokenAuthMiddleware(), s.UpdateWorkout)
 		v1.DELETE("/workouts/:id", middlewares.TokenAuthMiddleware(), s.DeleteWorkout)
 		v1.GET("/user_workouts/:id", s.GetUserWorkouts)
 
 		//Like route
 		v1.GET("/likes/:id", s.GetLikes)
-		v1.POST("/likes/:id", middlewares.TokenAuthMiddleware(), s.LikePost)
-		v1.DELETE("/likes/:id", middlewares.TokenAuthMiddleware(), s.UnLikePost)
+		v1.POST("/likes/:id", middlewares.TokenAuthMiddleware(), s.LikeWorkout)
+		v1.DELETE("/likes/:id", middlewares.TokenAuthMiddleware(), s.UnLikeWorkout)
 
 		//Comment routes
 		v1.WORKOUT("/comments/:id", middlewares.TokenAuthMiddleware(), s.CreateComment)

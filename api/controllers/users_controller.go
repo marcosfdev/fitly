@@ -19,15 +19,13 @@ import (
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/s3"
 	"github.com/gin-gonic/gin"
-	"github.com/mardosfdev/fitly/api/auth"
-	"github.com/mardosfdev/fitly/api/models"
-	"github.com/mardosfdev/fitly/api/security"
-	"github.com/mardosfdev/fitly/api/utils/fileformat"
-	"github.com/mardosfdev/fitly/api/utils/formaterror"
+	"github.com/marcosfdev/fitly/api/auth"
+	"github.com/marcosfdev/fitly/api/models"
+	"github.com/marcosfdev/fitly/api/security"
+	"github.com/marcosfdev/fitly/api/utils/formaterror"
 )
 
 func (server *Server) CreateUser(c *gin.Context) {
-
 	//clear previous error if any
 	errList = map[string]string{}
 

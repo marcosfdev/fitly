@@ -28,7 +28,7 @@ require (
 	github.com/matcornic/hermes/v2 v2.0.2
 	github.com/mattn/go-isatty v0.0.9 // indirect
 	github.com/mattn/go-runewidth v0.0.4 // indirect
-	github.com/minio/minio-go/v6 v6.0.52 // indirect
+	github.com/minio/minio-go/v6 v6.0.52
 	github.com/mitchellh/copystructure v1.0.0 // indirect
 	github.com/mitchellh/mapstructure v1.1.2 // indirect
 	github.com/myesui/uuid v1.0.0 // indirect
